@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: app_web
+    runtime: python
+    repo: https://github.com/Ferstrom/aplicacion_web.git
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 app.py
+    rootDir: ./
+
+  - type: web
+    name: api_rest
+    runtime: python
+    repo: https://github.com/Ferstrom/api_rest.git
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8080
+    rootDir: ./
