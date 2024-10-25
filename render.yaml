@@ -18,3 +18,16 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: fastapi run main.py
     rootDir: ./app
+
+# Exported from Render on 2024-10-25T21:09:16Z
+databases:
+- name: agenda
+  databaseName: db_agenda_u1pv
+  user: user
+  plan: free
+  region: oregon
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "16"
+version: "1"
